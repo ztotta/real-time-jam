@@ -2,7 +2,7 @@
   "use strict";
 
   angular
-    .module("rokoApp")
+    .module("jamApp")
     .controller("LoginController", LoginController);
 
   LoginController.$inject = ["$state", "userDataService", "$log"];

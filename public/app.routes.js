@@ -2,7 +2,7 @@
   "use strict";
 
   angular
-    .module("rokoApp")
+    .module("jamApp")
     .config(AppRoutes);
 
   AppRoutes.$inject = ["$stateProvider", "$urlRouterProvider"];

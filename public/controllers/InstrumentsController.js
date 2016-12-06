@@ -16,32 +16,38 @@
 			{
 				name: "KICK",
 				steps: [],
-				muted: false 
+				muted: false,
+				show: true
 			},
 			{
 				name: "SNARE",
 				steps: [],
-				muted: true
+				muted: false,
+				show: false
 			},
 			{
 				name: "HIHAT-CLOSED",
 				steps: [],
-				muted: true
+				muted: false,
+				show: false
 			},
 			{
 				name: "HIHAT-OPEN",
 				steps: [],
-				muted: true
+				muted: false,
+				show: false
 			},
 			{
 				name: "RIMSHOT",
 				steps: [],
-				muted: true
+				muted: false,
+				show: false
 			},
 			{
 				name: "CLAP",
 				steps: [],
-				muted: true
+				muted: false,
+				show: false
 			}
 		];
 
@@ -52,10 +58,15 @@
 		
 		function createSteps(instrument, index) {
 			for (var i = 0; i < 64; i++) {
+				if (i === 0 || i % 4) {
+					var quarterNote = true;
+				};
 				instrument.steps.push(
 					{
 						id: `${instrument.name}${i}`,
-						on: false
+						on: false,
+						quarterNote: quarterNot,
+						show: falsee
 					}
 				);
 			};

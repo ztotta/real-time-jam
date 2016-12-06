@@ -2,7 +2,7 @@
   "use strict";
 
   angular
-    .module("rokoApp")
+    .module("jamApp")
     .factory("userDataService", userDataService);
 
   userDataService.$inject = [];

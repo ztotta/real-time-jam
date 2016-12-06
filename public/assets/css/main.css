@@ -116,6 +116,7 @@ nav {
 	width: 100%;
 	display: flex;
 	align-items: center;
+	margin-top: 8px;
 }
 
 .button-on-off {
@@ -125,4 +126,14 @@ nav {
 
 .knob-global {
 	background-color: #4e90d0;
+	height: 28px;
+	cursor: pointer;
+}
+
+.muted {
+	background-color: black;
+}
+
+.quarterNote {
+	background-color: black;
 }

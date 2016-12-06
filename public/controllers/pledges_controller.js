@@ -2,7 +2,7 @@
   "use strict";
 
   angular
-      .module("rokoApp")
+      .module("jamApp")
       .controller("PledgesController", PledgesController);
 
   PledgesController.$inject = ["$state", "userDataService", "$log", "$http"];
