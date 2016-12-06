@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html ng-app="jamApp">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Real-Time Jame</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<!-- MATERIALIZE -->
+		<!-- Compiled and minified CSS -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+		<!-- Compiled and minified JavaScript -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+	<!-- ANGULAR -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+</head>
+<body>
+
+<!--
+		<nav>
+			<div class="nav-wrapper">
+				<a href="#" class="brand-logo">Loops w/ Friends</a>
+				<ul id="nav-mobile" class="right hide-on-small-and-down">
+					<li><a href="sass.html">MY STATIONS</a></li>
+					<li><a href="sass.html">NEW STATION</a></li>
+					<li><a href="badges.html">SIGN IN/OUT</a></li>
+				</ul>
+			</div>
+		</nav>
+-->
+    
+    <nav>
+			<div class="nav-wrapper">
+				<a href="#!" class="brand-logo">LOOPS W/ FRIENDS</a>
+				<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+				<ul class="right hide-on-med-and-down">
+					<li><a href="sass.html">Sass</a></li>
+					<li><a href="badges.html">Components</a></li>
+					<li><a href="collapsible.html">Javascript</a></li>
+					<li><a href="mobile.html">Mobile</a></li>
+				</ul>
+				<ul class="side-nav" id="mobile-demo">
+					<li><a href="sass.html">Sass</a></li>
+					<li><a href="badges.html">Components</a></li>
+					<li><a href="collapsible.html">Javascript</a></li>
+					<li><a href="mobile.html">Mobile</a></li>
+				</ul>
+			</div>
+		</nav>
+    
+		<div class="container" ng-controller="InstrumentsController as inst">
+		
+    	<div class="row panel" id="control-panel">
+				<div class="col s4 knob-global">GLOBAL I/O</div>
+				<div class="col s4 knob-global">TEMPO</div>
+				<div class="col s4 knob-global">TEMPO</div> button-global
+				<div class="col s12" id="on-off-panel">
+					<button class="btn-large button-on-off">KICK</button>
+					<button class="btn-large button-on-off">KICK</button>
+					<button class="btn-large button-on-off">KICK</button>
+					<button class="btn-large button-on-off">KICK</button>
+					<button class="btn-large button-on-off">KICK</button>
+					<button class="btn-large button-on-off">KICK</button>
+					<button class="btn-large button-on-off">KICK</button>
+					<button class="btn-large button-on-off">KICK</button>
+				</div>
+    	</div>
+		
+    	<div class="row" ng-repeat="instrument in inst.instruments" ng-show="!instrument.muted">
+				<div class="panel instrument-panel">
+					<div class="panel-header">
+						<div class="col s4">{{ instrument.name }}</div>
+						<div class="col s4">PLAY/PAUSE</div>
+						<div class="col s4">HIDE</div>
+					</div>
+					<div class="step-panel">
+						<div class="step" ng-repeat="step in instrument.steps" id="">X</div>
+					</div>
+				</div>
+    	</div>
+    	
+		</div>  
+
+    <main class="content" ui-view>
+      <!-- PAGE TEMPLATES INSERT HERE -->
+    </main>
+
+    <div id="footer">
+    	<div id="footer-wrapper" class="nav-wrapper">
+				<ul id="" class="footer-wrapper">
+					<li class="footer-links"><a href="sass.html">MY STATIONS</a></li>
+					<li class="footer-links"><a href="sass.html">NEW STATION</a></li>
+					<li class="footer-links"><a href="badges.html">SIGN IN/OUT</a></li>
+				</ul>
+			</div>
+    </div>
+
+  <!-- Angular scripts -->
+  <script src="/assets/js/main.js"></script>
+  <script src="/app.js"></script>
+  <script src="/app.routes.js"></script>
+  <script src="/services/user.dataservice.js"></script>
+  <script src="/controllers/InstrumentsController.js"></script>
+  <script src="/controllers/main_controller.js"></script>
+  <script src="/controllers/login_controller.js"></script>
+  <script src="/controllers/pledges_controller.js"></script>
+</body>
+</html>
